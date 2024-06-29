@@ -6,7 +6,7 @@ import Notes from "../components/Notes";
 
 export default function Home() {
   return (
-    <main className="bg-black px-[30px] md:px-[95px]">
+    <main className="bg-[#12151C] px-[30px] md:px-[95px]">
      <Hero />
      <Notes />
      <Exercises />
