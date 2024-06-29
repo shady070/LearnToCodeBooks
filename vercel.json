@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/wp-admin/:path*",
+      "destination": "https://learntocodebooks.com/wp-admin/:path*"
+    },
+    {
+      "source": "/wp-login.php",
+      "destination": "https://learntocodebooks.com/wp-login.php"
+    }
+  ]
+}
