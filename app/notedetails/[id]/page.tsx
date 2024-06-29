@@ -42,7 +42,7 @@ const Page = () => {
 
 
   return (
-    <div className="md:px-[65px] px-[30px] py-[80px]  md:py-[42px] bg-black md:pt-[130px]">
+    <div className="md:px-[65px] px-[30px] py-[80px]  md:py-[42px] md:pt-[130px]">
     <div>
       <h1 className="text-[32px] text-white font-medium">{post.acf.title}</h1>
       <p className="md:text-[24px] pt-[16px] pb-[16px] text-white font-light">{post.acf.subtitle}</p>
