@@ -48,21 +48,21 @@ const Page = () => {
       <p className="md:text-[24px] pt-[16px] pb-[16px] text-white font-light">{post.acf.subtitle}</p>
     </div>
     <div>
-      <img className="w-full md:h-[481px] object-cover rounded-[20px]" src={post.acf.post_thumbnail} alt={post.acf.title} />
+      <img className="w-full md:h-[481px] h-[200px] object-cover md:rounded-[20px] rounded-md " src={post.acf.post_thumbnail} alt={post.acf.title} />
     </div>
-    <div className="text-[32px] text-white pt-[10px] md:pb-[20px] md:pt-[46px]">
+    <div className="text-[32px] pt-[10px] text-white md:pt-[25px]">
       <h1>{post.acf.inline_title}</h1>
     </div>
-    <div className="w-full md:text-[24px] text-white pt-[30px] font-light">
+    <div className="w-full md:text-[24px] text-white pt-[20px] font-light">
       <p dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.acf.details.replace(/\r\n/g, '<br/>')) }}></p>
     </div>
-    <div className="text-[32px] text-white pb-[20px] md:pt-[46px]">
+    <div className="text-[32px] text-white pb-[20px] md:pt-[25px]">
       <h1>{post.acf.inline_title_1}</h1>
     </div>
-    <div className="w-full md:text-[24px] text-white md:pt-[30px] font-light">
+    <div className="w-full md:text-[24px] pt-[20px] pb-[20px] text-white font-light">
       <p dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.acf.more_text.replace(/\r\n/g, '<br/>')) }}></p>
     </div>
-    <div className="text-[32px] text-white pb-[20px] md:pt-[46px]">
+    <div className="text-[32px] text-white pb-[20px] md:pt-[25px]">
       <h1 dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.acf.inline_title_2.replace(/\r\n/g, '<br/>')) }}></h1>
     </div>
     {post.acf.code && (
@@ -70,43 +70,57 @@ const Page = () => {
       {post.acf.code}
     </SyntaxHighlighter>
     )}
-    <div className="text-[32px] text-white pb-[20px] md:pt-[46px]">
+    {post.acf.inline_title_3 && (
+    <div className="text-[32px] text-white pb-[20px] md:pt-[25px]">
       <h1>{post.acf.inline_title_3}</h1>
     </div>
-    <div className="w-full md:text-[24px] text-white md:pt-[30px] font-light">
+    )}
+    {post.acf.more_text_1 && (
+    <div className="w-full md:text-[24px] pb-[20px] text-white font-light">
       <p dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.acf.more_text_1.replace(/\r\n/g, '<br/>')) }}></p>
     </div>
+    )}
     {post.acf.code_1 && (
     <SyntaxHighlighter language="javascript" style={okaidia} className="w-full md:text-[24px] text-white md:pt-[30px] font-light">
       {post.acf.code_1}
     </SyntaxHighlighter>
     )}
-    <div className="text-[32px] text-white pb-[20px] md:pt-[46px]">
+    {post.acf.inline_title_4 && (
+    <div className="text-[32px] text-white pb-[20px] md:pt-[25px]">
       <h1>{post.acf.inline_title_4}</h1>
     </div>
-    <div className="w-full md:text-[24px] text-white md:pt-[30px] font-light">
+    )}
+    {post.acf.more_text_2 && (
+    <div className="w-full md:text-[24px] pb-[20px] text-white font-light">
       <p dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.acf.more_text_2.replace(/\r\n/g, '<br/>')) }}></p>
     </div>
+    )}
     {post.acf.code_2 && (
     <SyntaxHighlighter language="javascript" style={okaidia} className="w-full md:text-[24px] text-white md:pt-[30px] font-light">
       {post.acf.code_2}
     </SyntaxHighlighter>
     )}
-    <div className="text-[32px] text-white pb-[20px] md:pt-[46px]">
+    {post.acf.inline_title_5 && (
+    <div className="text-[32px] text-white pb-[20px] md:pt-[25px]">
       <h1>{post.acf.inline_title_5}</h1>
     </div>
-    <div className="w-full md:text-[24px] text-white md:pt-[30px] font-light">
+    )}
+    {post.acf.more_text_3 && (
+    <div className="w-full md:text-[24px] pb-[20px] text-white font-light">
       <p dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.acf.more_text_3.replace(/\r\n/g, '<br/>')) }}></p>
     </div>
+    )}
     {post.acf.code_3 && (
     <SyntaxHighlighter language="javascript" style={okaidia} className="w-full md:text-[24px] text-white md:pt-[30px] font-light">
       {post.acf.code_3}
     </SyntaxHighlighter>
     )}
-    <div className="text-[32px] text-white pb-[20px] md:pt-[46px]">
+    {post.acf.inline_title_6 && (
+    <div className="text-[32px] text-white pb-[20px] md:pt-[25px]">
       <h1>{post.acf.inline_title_6}</h1>
     </div>
-    <div className="w-full md:text-[24px] text-white font-light">
+    )}
+    <div className="w-full md:text-[24px] pb-[20px] text-white font-light">
       <p dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.acf.more_text_4.replace(/\r\n/g, '<br/>')) }}></p>
     </div>
     {post.acf.code_4 && ( 
@@ -114,11 +128,13 @@ const Page = () => {
       {post.acf.code_4}
     </SyntaxHighlighter>
     )}
-    <div className="text-[32px] text-white pb-[20px] md:pt-[46px]">
+    {post.acf.inline_title_7 && (
+    <div className="text-[32px] text-white pb-[20px] md:pt-[25px]">
       <h1>{post.acf.inline_title_7}</h1>
     </div>
+   )}
     {post.acf.more_text_5 && (
-    <div className="w-full md:text-[24px] text-white md:pt-[30px] font-light">
+    <div className="w-full md:text-[24px] pb-[20px] text-white font-light">
       <p dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.acf.more_text_5.replace(/\r\n/g, '<br/>')) }}></p>
     </div>
     )}
@@ -128,8 +144,78 @@ const Page = () => {
     </SyntaxHighlighter>
     )}
     {post.acf.more_text_6 && (
-    <div className="w-full md:text-[24px] text-white md:pt-[30px] font-light">
+    <div className="w-full md:text-[24px] pb-[20px] text-white font-light">
       <p dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.acf.more_text_6.replace(/\r\n/g, '<br/>')) }}></p>
+    </div>
+    )}
+    {post.acf.inline_title_8 && (
+    <div className="text-[32px] text-white pb-[20px] md:pt-[25px]">
+      <h1>{post.acf.inline_title_8}</h1>
+    </div>
+    )}
+    {post.acf.more_text_6 && (
+    <div className="w-full md:text-[24px] pb-[20px] text-white font-light">
+      <p dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.acf.more_text_6.replace(/\r\n/g, '<br/>')) }}></p>
+    </div>
+    )}
+    {post.acf.code_6 && (
+    <SyntaxHighlighter language="javascript" style={okaidia} className="w-full md:text-[24px] text-white md:pt-[30px] font-light">
+      {post.acf.code_6}
+    </SyntaxHighlighter>
+    )}
+    {post.acf.more_text_7 && (
+    <div className="w-full md:text-[24px] pb-[20px] text-white font-light">
+      <p dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.acf.more_text_7.replace(/\r\n/g, '<br/>')) }}></p>
+    </div>
+    )}
+    {post.acf.inline_title_9 && (
+    <div className="text-[32px] text-white pb-[20px] md:pt-[25px]">
+      <h1>{post.acf.inline_title_9}</h1>
+    </div>
+    )}
+    {post.acf.more_text_7 && (
+    <div className="w-full md:text-[24px] pb-[20px] text-white font-light">
+      <p dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.acf.more_text_7.replace(/\r\n/g, '<br/>')) }}></p>
+    </div>
+    )}
+    {post.acf.code_7 && (
+    <SyntaxHighlighter language="javascript" style={okaidia} className="w-full md:text-[24px] text-white md:pt-[30px] font-light">
+      {post.acf.code_7}
+    </SyntaxHighlighter>
+    )}
+    {post.acf.more_text_8 && (
+    <div className="w-full md:text-[24px] pb-[20px] text-white font-light">
+      <p dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.acf.more_text_8.replace(/\r\n/g, '<br/>')) }}></p>
+    </div>
+    )}
+    {post.acf.inline_title_10 && (
+    <div className="text-[32px] text-white pb-[20px] md:pt-[25px]">
+      <h1>{post.acf.inline_title_10}</h1>
+    </div>
+    )}
+    {post.acf.more_text_8 && (
+    <div className="w-full md:text-[24px] pb-[20px] text-white font-light">
+      <p dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.acf.more_text_8.replace(/\r\n/g, '<br/>')) }}></p>
+    </div>
+    )}
+    {post.acf.code_8 && (
+    <SyntaxHighlighter language="javascript" style={okaidia} className="w-full md:text-[24px] text-white md:pt-[30px] font-light">
+      {post.acf.code_8}
+    </SyntaxHighlighter>
+    )}
+    {post.acf.more_text_9 && (
+    <div className="w-full md:text-[24px] pb-[20px] text-white font-light">
+      <p dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.acf.more_text_9.replace(/\r\n/g, '<br/>')) }}></p>
+    </div>
+    )}
+    {post.acf.code_9 && (
+    <SyntaxHighlighter language="javascript" style={okaidia} className="w-full md:text-[24px] text-white md:pt-[30px] font-light">
+      {post.acf.code_9}
+    </SyntaxHighlighter>
+    )}
+    {post.acf.more_text_10 && (
+    <div className="w-full md:text-[24px] pb-[20px] text-white font-light">
+      <p dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.acf.more_text_10.replace(/\r\n/g, '<br/>')) }}></p>
     </div>
     )}
   </div>

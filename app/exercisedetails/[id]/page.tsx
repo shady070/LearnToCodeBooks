@@ -47,7 +47,7 @@ const Page = () => {
       <p className="md:text-[24px] pt-[16px] pb-[16px] text-white font-light">{post.acf.subtitle}</p>
     </div>
     <div>
-      <img className="w-full md:h-[481px] object-cover rounded-[20px]" src={post.acf.post_thumbnail} alt={post.acf.title} />
+      <img className="w-full md:h-[481px] h-[200px] object-cover md:rounded-[20px] rounded-md" src={post.acf.post_thumbnail} alt={post.acf.title} />
     </div>
     <div className="text-[32px] text-white pt-[10px] md:pb-[20px] md:pt-[46px]">
       <h1>{post.acf.inline_title}</h1>
