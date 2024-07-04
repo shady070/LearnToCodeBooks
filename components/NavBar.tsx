@@ -60,6 +60,7 @@ const NavBar = () => {
           <Link href="/quiz" className="cursor-pointer border-b hover:text-[#FB8B01] active:text-[#FB7712]">Quiz</Link>
           <Link href="/exercises" className="cursor-pointer border-b hover:text-[#FB8B01] active:text-[#FB7712]">Exercises</Link>
           <Link href="/projects" className="cursor-pointer border-b hover:text-[#FB8B01] active:text-[#FB7712]">Projects</Link>
+          <Link href="/contact" className="cursor-pointer border-b hover:text-[#FB8B01] active:text-[#FB7712]">Contact Us</Link>
         </div>
       </div>
     </div>

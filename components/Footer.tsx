@@ -1,6 +1,7 @@
 import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
 import { FaXTwitter } from "react-icons/fa6";
+import Link from "next/link";
 
 
 
@@ -14,7 +15,7 @@ const Footer = () => {
       </div>
       <div>
         <ul className="flex flex-wrap w-[300px] md:w-full gap-[10px] items-center justify-center pb-[10px] md:gap-[25px] md:pt-[30px] md:text-[24px] text-white">
-          <a href="#">Home</a>
+          <Link href="/contact">Contact Us</Link>
           <a href="#">Notes</a>
           <a href="#">Courses</a>
           <a href="#">Exercises</a>
