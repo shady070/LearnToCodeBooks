@@ -14,9 +14,9 @@ const Footer = () => {
         <FaXTwitter className="hover:text-[#FB8B01] active:text-[#FB7712]" />
       </div>
       <div>
-        <ul className="flex flex-wrap w-[300px] md:w-full gap-[10px] items-center justify-center pb-[10px] md:gap-[25px] md:pt-[30px] md:text-[24px] text-white">
+        <ul className="flex flex-wrap w-[300px] md:w-full gap-[10px] items-center justify-center pb-[10px] md:gap-[25px] md:pt-[30px] md:text-[20px] text-white">
           <Link href="/contact">Contact Us</Link>
-          <a href="#">Notes</a>
+          <Link href="/terms-of-service">Terms of Service</Link>
           <a href="#">Courses</a>
           <a href="#">Exercises</a>
           <a href="#">Projects</a>
