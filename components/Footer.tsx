@@ -17,7 +17,7 @@ const Footer = () => {
         <ul className="flex flex-wrap w-[300px] md:w-full gap-[10px] items-center justify-center pb-[10px] md:gap-[25px] md:pt-[30px] md:text-[20px] text-white">
           <Link href="/contact">Contact Us</Link>
           <Link href="/terms-of-service">Terms of Service</Link>
-          <a href="#">Courses</a>
+          <Link href="/privacy">Privacy Policy</Link>
           <a href="#">Exercises</a>
           <a href="#">Projects</a>
         </ul>
