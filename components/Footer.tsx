@@ -18,8 +18,7 @@ const Footer = () => {
           <Link href="/contact">Contact Us</Link>
           <Link href="/terms-of-service">Terms of Service</Link>
           <Link href="/privacy">Privacy Policy</Link>
-          <a href="#">Exercises</a>
-          <a href="#">Projects</a>
+          <Link href="/recent">Recent Posts</Link>
         </ul>
       </div>
       <div className="md:text-[20px] text-[12px] text-white md:mt-[30px] pb-[10px] font-extralight">
