@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 
+
 const NavBar = () => {
   const [showNav, setShowNav] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -37,7 +38,13 @@ const NavBar = () => {
       } bg-[#1B222C] text-white md:py-[20px] md:px-[53px] px-[25px] py-[10px] flex justify-between md:items-center`}
     >
       <div>
-        <Link href="/" className="text-[20px] md:text-[24px] cursor-pointer font-medium">LearnToCodeBooks</Link>
+        <a href="/">
+        <img className="cursor-pointer h-[30px] md:h-[40px]"
+          src="/logo.svg"
+          alt="Logo"
+        />
+        </a>
+
       </div>
       <ul className="hidden md:flex md:gap-[52px] text-[16px] md:text-[20px]">
       <Link href="/" className="hover:text-[#FB8B01]">Home</Link>
