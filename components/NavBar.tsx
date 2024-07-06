@@ -46,19 +46,20 @@ const NavBar = () => {
         </a>
 
       </div>
-      <ul className="hidden md:flex md:gap-[52px] text-[16px] md:text-[20px]">
+      <ul className="hidden lg:flex md:gap-[52px] text-[16px] font-light md:text-[20px]">
       <Link href="/" className="hover:text-[#FB8B01]">Home</Link>
       <Link href="/notes" className="hover:text-[#FB8B01]">Notes</Link>
       <Link href="/quiz" className="hover:text-[#FB8B01]">Quiz</Link>
       <Link href="/exercises" className="hover:text-[#FB8B01]">Exercises</Link>
       <Link href="/projects" className="hover:text-[#FB8B01]">Projects</Link>
+      <Link href="/about" className="hover:text-[#FB8B01]">About Us</Link>
       </ul>
-      <div className="md:hidden relative">
+      <div className="lg:hidden relative">
         <button onClick={toggleMenu} className="text-[20px] z-50 relative text-white">
           {menuOpen ? '✕' : '☰'}
         </button>
         <div
-          className={`fixed top-0 right-0 h-screen drop-shadow-2xl w-3/4 max-w-[250px] text-white bg-[#1B222C]  shadow-lg transition-transform duration-300 ${
+          className={`fixed top-0 right-0 h-screen drop-shadow-2xl w-3/4 max-w-[250px] text-white bg-[#1B222C] font-light shadow-lg transition-transform duration-300 ${
             menuOpen ? 'translate-x-0' : 'translate-x-full'
           } flex flex-col gap-4 pt-16 px-4`}
         >
@@ -68,6 +69,7 @@ const NavBar = () => {
           <Link href="/exercises" className="cursor-pointer border-b hover:text-[#FB8B01] active:text-[#FB7712]">Exercises</Link>
           <Link href="/projects" className="cursor-pointer border-b hover:text-[#FB8B01] active:text-[#FB7712]">Projects</Link>
           <Link href="/contact" className="cursor-pointer border-b hover:text-[#FB8B01] active:text-[#FB7712]">Contact Us</Link>
+          <Link href="/about" className="cursor-pointer border-b hover:text-[#FB8B01] active:text-[#FB7712]">About Us</Link>
         </div>
       </div>
     </div>

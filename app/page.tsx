@@ -13,13 +13,13 @@ export default function Home() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2000); // Adjust the delay as needed
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, []);
 
   return (
-    <main className="bg-[#12151C] px-[30px] md:px-[95px]">
+    <main className="bg-[#12151C] px-[30px] md:px-[95px] scroll-smooth">
       {isLoading ? (
         <LoadingScreen />
       ) : (

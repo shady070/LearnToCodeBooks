@@ -42,12 +42,12 @@ const RecentPostBox = () => {
               />
             </div>
             <div className="w-full flex flex-col justify-between md:w-[330px] h-[111px] rounded-b-lg px-[31px] py-[10px] bg-[#1B222C] text-white mb-[30px] md:mb-[0px]">
-              <Link href={`/details/${post.id}`} className="text-[20px] font-medium text-white cursor-pointer hover:text-[#FB8B01] active:text-[#FB7712]">
+              <Link href={`/details/${post.id}`} className="text-[20px] font-light text-white cursor-pointer hover:text-[#FB8B01] active:text-[#FB7712]">
                 <motion.h1 initial={{ opacity: 0, y:20 }} whileInView={{ opacity: 1, y:0 }} transition={{ delay: 0.4, duration:0.5 }} >{post.acf.title}</motion.h1> 
               </Link>
               <motion.div initial={{ opacity: 0, y:10 }} whileInView={{ opacity: 1, y:0 }} transition={{ delay: 0.5, duration:0.6 }} className="flex justify-between">
-                <p className="text-[16px]">
-                  By <span className="font-medium underline text-white cursor-pointer hover:text-[#FB8B01] active:text-[#FB7712]">{post.acf.auther_}</span>
+                <p className="text-[16px] font-thin">
+                  By <span className="font-light underline text-white cursor-pointer hover:text-[#FB8B01] active:text-[#FB7712]">{post.acf.auther_}</span>
                 </p>
                 <p className="font-[100]">{post.acf.date}</p>
               </motion.div>
