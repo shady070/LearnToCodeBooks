@@ -13,7 +13,7 @@ export default function Home() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2000); // Adjust the delay as needed
+    }, 3000); // Adjust the delay as needed
 
     return () => clearTimeout(timer);
   }, []);
