@@ -58,7 +58,7 @@ const Page = () => {
     <div className="text-[32px] text-white pb-[20px] md:pt-[25px]">
       <motion.h1 initial={{ opacity: 0, x:-100 }} whileInView={{ opacity: 1, x:0 }} transition={{ delay: 0.3, duration:0.7 }}>{post.acf.inline_title_1}</motion.h1 >
     </div>
-    <div className="w-full md:text-[24px] pt-[20px] pb-[20px] text-white font-light">
+    <div className="w-full md:text-[24px] pb-[20px] text-white font-light">
       <motion.p initial={{ opacity: 0, y:20 }} whileInView={{ opacity: 1, y:0 }} transition={{ delay: 0.4, duration:0.7 }} dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.acf.more_text.replace(/\r\n/g, '<br/>')) }}></motion.p>
     </div>
     <div className="text-[32px] text-white pb-[20px] md:pt-[25px]">
