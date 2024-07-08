@@ -154,11 +154,6 @@ const Page = () => {
        </SyntaxHighlighter>   
       </motion.div>
     )}
-    {post.acf.more_text_6 && (
-    <div className="w-full md:text-[24px] pb-[20px] text-white font-light">
-      <motion.p initial={{ opacity: 0, y:20 }} whileInView={{ opacity: 1, y:0 }} transition={{ delay: 0.4, duration:0.7 }} dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.acf.more_text_6.replace(/\r\n/g, '<br/>')) }}></motion.p>
-    </div>
-    )}
     {post.acf.inline_title_8 && (
     <div className="text-[32px] text-white pb-[20px] md:pt-[25px]">
       <motion.h1 initial={{ opacity: 0, y:100 }} whileInView={{ opacity: 1, y:0 }} transition={{ delay: 0.4, duration:0.7 }}>{post.acf.inline_title_8}</motion.h1>
@@ -176,11 +171,6 @@ const Page = () => {
       </SyntaxHighlighter>
       </motion.div>
     )}
-    {post.acf.more_text_7 && (
-    <div className="w-full md:text-[24px] pb-[20px] text-white font-light">
-      <motion.p initial={{ opacity: 0, y:20 }} whileInView={{ opacity: 1, y:0 }} transition={{ delay: 0.4, duration:0.7 }} dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.acf.more_text_7.replace(/\r\n/g, '<br/>')) }}></motion.p>
-    </div>
-    )}
     {post.acf.inline_title_9 && (
     <div className="text-[32px] text-white pb-[20px] md:pt-[25px]">
       <motion.h1 initial={{ opacity: 0, y:100 }} whileInView={{ opacity: 1, y:0 }} transition={{ delay: 0.4, duration:0.7 }}>{post.acf.inline_title_9}</motion.h1>
@@ -197,11 +187,6 @@ const Page = () => {
       {post.acf.code_7}
      </SyntaxHighlighter>
       </motion.div>
-    )}
-    {post.acf.more_text_8 && (
-    <div className="w-full md:text-[24px] pb-[20px] text-white font-light">
-      <motion.p initial={{ opacity: 0, y:20 }} whileInView={{ opacity: 1, y:0 }} transition={{ delay: 0.4, duration:0.7 }} dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.acf.more_text_8.replace(/\r\n/g, '<br/>')) }}></motion.p>
-    </div>
     )}
     {post.acf.inline_title_10 && (
     <div className="text-[32px] text-white pb-[20px] md:pt-[25px]">
