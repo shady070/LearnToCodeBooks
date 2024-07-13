@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import GoogleAdsense from "../components/GoogleAdsense";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
@@ -22,18 +22,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
-        <meta name="google-adsense-account" content="ca-pub-4739302499828467" />
-        <script 
-          async 
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4739302499828467"
-          crossOrigin="anonymous"></script>
-      </Head>
       <body className={poppins.className}>
         <NavBar />
         {children}
         <Footer />
       </body>
+      <GoogleAdsense pId="4739302499828467" />
     </html>
   );
 }
