@@ -50,7 +50,8 @@ const NavBar = () => {
       <Link href="/" className="hover:text-[#FB8B01]">Home</Link>
       <Link href="/notes" className="hover:text-[#FB8B01]">Notes</Link>
       <Link href="/quiz" className="hover:text-[#FB8B01]">Quiz</Link>
-      <Link href="/exercises" className="hover:text-[#FB8B01]">Exercises</Link>
+      {/* Exercises is hidden for now  */} 
+      <Link href="/exercises" className="hover:text-[#FB8B01] hidden">Exercises</Link>
       <Link href="/projects" className="hover:text-[#FB8B01]">Projects</Link>
       <Link href="/about" className="hover:text-[#FB8B01]">About Us</Link>
       </ul>
@@ -66,7 +67,8 @@ const NavBar = () => {
           <Link href="/" className="cursor-pointer border-b hover:text-[#FB8B01] active:text-[#FB7712]">Home</Link>
           <Link href="/notes" className="cursor-pointer border-b hover:text-[#FB8B01] active:text-[#FB7712]">Notes</Link>
           <Link href="/quiz" className="cursor-pointer border-b hover:text-[#FB8B01] active:text-[#FB7712]">Quiz</Link>
-          <Link href="/exercises" className="cursor-pointer border-b hover:text-[#FB8B01] active:text-[#FB7712]">Exercises</Link>
+          {/* Exercises is hidden for now  */} 
+          <Link href="/exercises" className="cursor-pointer border-b hover:text-[#FB8B01] active:text-[#FB7712] hidden">Exercises</Link>
           <Link href="/projects" className="cursor-pointer border-b hover:text-[#FB8B01] active:text-[#FB7712]">Projects</Link>
           <Link href="/contact" className="cursor-pointer border-b hover:text-[#FB8B01] active:text-[#FB7712]">Contact Us</Link>
           <Link href="/about" className="cursor-pointer border-b hover:text-[#FB8B01] active:text-[#FB7712]">About Us</Link>
