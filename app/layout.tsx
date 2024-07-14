@@ -4,6 +4,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
+import Script from "next/script";
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -22,6 +23,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-LKLN8BZ5VX"></Script>
+      <Script id="google-analytics">
+        {`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-LKLN8BZ5VX');
+        `}
+      </Script>
+      </head>
       <body className={poppins.className}>
         <NavBar />
         {children}
