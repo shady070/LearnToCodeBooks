@@ -47,6 +47,7 @@ export interface Post {
       auther_: string;
       date: string;
       description: string;
+      zip_file: string;
     };
     id: number;
   }
