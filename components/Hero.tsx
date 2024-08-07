@@ -1,4 +1,4 @@
-import React from 'react'
+import AdBanner from "@/components/AdsBanner";
 import RecentPostBox from './RecentPostBox'
 
 
@@ -12,6 +12,11 @@ const Hero = () => {
      <div>
       <RecentPostBox />
      </div>
+     <AdBanner
+                dataAdFormat="auto"
+                dataFullWidthResponsive={true}
+                dataAdSlot="5613366550"
+      />
     </div>
   )
 }

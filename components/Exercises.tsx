@@ -1,4 +1,4 @@
-import React from 'react'
+import AdBanner from "@/components/AdsBanner";
 import ExercisePostBox from './ExercisePostBox'
 
 const Exercises = () => {
@@ -12,6 +12,11 @@ const Exercises = () => {
         <div>
             <ExercisePostBox />
         </div>
+        <AdBanner
+                dataAdFormat="auto"
+                dataFullWidthResponsive={true}
+                dataAdSlot="2616238940"
+        />
     </div>
   )
 }
