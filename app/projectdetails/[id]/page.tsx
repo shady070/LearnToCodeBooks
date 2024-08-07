@@ -6,6 +6,8 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { okaidia } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { Post } from "../../../types";
 import { motion } from "framer-motion";
+import AdBanner from "@/components/AdsBanner";
+
 
 const Page = () => {
   const pathname = usePathname();
@@ -63,6 +65,11 @@ const Page = () => {
     <div className="text-[32px] text-white pb-[20px] md:pt-[25px]">
       <motion.h1 initial={{ opacity: 0, x:-100 }} whileInView={{ opacity: 1, x:0 }} transition={{ delay: 0.3, duration:0.7 }} dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.acf.inline_title_2.replace(/\r\n/g, '<br/>')) }}></motion.h1>
     </div>
+    <AdBanner
+                dataAdFormat="auto"
+                dataFullWidthResponsive={true}
+                dataAdSlot="5613366550"
+      />
     {post.acf.code && (
       <motion.div initial={{ opacity: 0, y:100 }} whileInView={{ opacity: 1, y:0 }} transition={{ delay: 0.4, duration:0.7 }}>
         <SyntaxHighlighter language="javascript" style={okaidia} className="w-full md:text-[24px] text-white md:pt-[30px] font-light">
@@ -115,6 +122,11 @@ const Page = () => {
       <motion.p initial={{ opacity: 0, y:20 }} whileInView={{ opacity: 1, y:0 }} transition={{ delay: 0.4, duration:0.7 }} dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.acf.more_text_3.replace(/\r\n/g, '<br/>')) }}></motion.p>
     </div>
     )}
+      <AdBanner
+                dataAdFormat="auto"
+                dataFullWidthResponsive={true}
+                dataAdSlot="5613366550"
+      />
     {post.acf.code_3 && (
       <motion.div initial={{ opacity: 0, y:100 }} whileInView={{ opacity: 1, y:0 }} transition={{ delay: 0.4, duration:0.7 }}>
       <SyntaxHighlighter language="javascript" style={okaidia} className="w-full md:text-[24px] text-white md:pt-[30px] font-light">
@@ -154,6 +166,11 @@ const Page = () => {
        </SyntaxHighlighter>   
       </motion.div>
     )}
+      <AdBanner
+                dataAdFormat="auto"
+                dataFullWidthResponsive={true}
+                dataAdSlot="5613366550"
+      />
     {post.acf.inline_title_8 && (
     <div className="text-[32px] text-white pb-[20px] md:pt-[25px]">
       <motion.h1 initial={{ opacity: 0, y:100 }} whileInView={{ opacity: 1, y:0 }} transition={{ delay: 0.4, duration:0.7 }}>{post.acf.inline_title_8}</motion.h1>
@@ -210,6 +227,11 @@ const Page = () => {
       <motion.p initial={{ opacity: 0, y:20 }} whileInView={{ opacity: 1, y:0 }} transition={{ delay: 0.4, duration:0.7 }} dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.acf.more_text_9.replace(/\r\n/g, '<br/>')) }}></motion.p>
     </div>
     )}
+      <AdBanner
+                dataAdFormat="auto"
+                dataFullWidthResponsive={true}
+                dataAdSlot="5613366550"
+      />
     {post.acf.code_9 && (
       <motion.div initial={{ opacity: 0, y:100 }} whileInView={{ opacity: 1, y:0 }} transition={{ delay: 0.4, duration:0.7 }}>
       <SyntaxHighlighter language="javascript" style={okaidia} className="w-full md:text-[24px] text-white md:pt-[30px] font-light">
@@ -222,6 +244,11 @@ const Page = () => {
       <motion.p initial={{ opacity: 0, y:20 }} whileInView={{ opacity: 1, y:0 }} transition={{ delay: 0.4, duration:0.7 }} dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.acf.more_text_10.replace(/\r\n/g, '<br/>')) }}></motion.p>
     </div>
     )}
+      <AdBanner
+                dataAdFormat="auto"
+                dataFullWidthResponsive={true}
+                dataAdSlot="5613366550"
+      />
   </div>
   );
 };

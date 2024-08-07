@@ -1,5 +1,5 @@
 import NotesPostBox from "@/components/NotesPostBox"
-
+import AdBanner from "@/components/AdsBanner";
 
 const page = () => {
   return (
@@ -9,6 +9,11 @@ const page = () => {
       <div className='w-[70px] h-[2px] md:w-[100px] bg-white' />
     </div>
     <NotesPostBox />
+    <AdBanner
+                dataAdFormat="auto"
+                dataFullWidthResponsive={true}
+                dataAdSlot="5613366550"
+      />
   </div>
   )
 }

@@ -1,5 +1,5 @@
 import QuizPostBox from "@/components/QuizPostBox"
-
+import AdBanner from "@/components/AdsBanner"
 
 const page = () => {
   return (
@@ -9,6 +9,13 @@ const page = () => {
       <div className='w-[105px] h-[2px] md:w-[160px] bg-white' />
     </div>
     <QuizPostBox />
+    <div className="pt-[20px]">
+      <AdBanner
+                dataAdFormat="auto"
+                dataFullWidthResponsive={true}
+                dataAdSlot="5613366550"
+      />
+     </div>
   </div>
   )
 }
