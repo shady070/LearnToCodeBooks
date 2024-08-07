@@ -39,7 +39,7 @@ const Page = () => {
     setTimer(15);
     setIsCounting(true);
   };
-  
+
   const pathname = usePathname();
   const id = pathname.split("/").pop(); 
   const [post, setPost] = useState<Post | null>(null);
@@ -52,6 +52,7 @@ const Page = () => {
           const req = await fetch(`https://freeresources.learntocodebooks.com/wp-json/wp/v2/notes/${id}?acf_format=standard&_fields=acf`);
           const postData = await req.json();
           setPost(postData);
+          setFileUrl(postData.acf.zip_file);
           setLoading(false);
         } catch (error) {
           console.error('Error fetching post details:', error);
