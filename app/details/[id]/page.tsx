@@ -71,7 +71,7 @@ const Page = () => {
   }
 
   return (
-  <div className="md:px-[65px] px-[30px] py-[80px] bg-[#12151C] scroll-smooth  md:py-[42px] md:pt-[130px]">
+  <div className="md:px-[65px] px-[30px] py-[80px] bg-[#12151C] scroll-smooth  md:py-[42px] md:pt-[130px] min-h-screen">
     <div>
       <motion.h1 initial={{ opacity: 0, x:-100 }} whileInView={{ opacity: 1, x:0 }} transition={{ delay: 0.3, duration:0.7 }} className="text-[32px] text-white font-medium">{post.acf.title}</motion.h1>
       <motion.p initial={{ opacity: 0, x:-100 }} whileInView={{ opacity: 1, x:0 }} transition={{ delay: 0.4, duration:0.8 }} className="md:text-[24px] pt-[16px] pb-[16px] text-white font-light">{post.acf.subtitle}</motion.p>
@@ -284,8 +284,8 @@ const Page = () => {
      {post.acf.zip_file && (
         <div className="py-[10px] flex justify-center">
           <motion.div initial={{ opacity: 0, y:20 }} whileInView={{ opacity: 1, y:0 }} transition={{ delay: 0.4, duration:0.7 }}>
-            <button onClick={startTimer} disabled={isCounting} className="text-white bg-black px-[20px] py-[10px] rounded-md text-[24px] md:text-[34px]">
-              {isCounting ? `Wait ${timer} seconds` : 'Download'}
+            <button onClick={startTimer} disabled={isCounting} className="text-white bg-[#1DA1F2] px-[20px] py-[10px] rounded-md text-[24px] md:text-[34px]">
+              {isCounting ? `Your Downloading Will Begain in ${timer} seconds` : 'Download'}
             </button>
             {isCounting && 
             <div className="pt-[10px]">

@@ -279,7 +279,7 @@ const Page = () => {
            {post.acf.zip_file && (
         <div className="py-[10px] flex  justify-center">
           <motion.div initial={{ opacity: 0, y:20 }} whileInView={{ opacity: 1, y:0 }} transition={{ delay: 0.4, duration:0.7 }}>
-            <button onClick={startTimer} disabled={isCounting} className="text-white bg-black px-[20px] py-[10px] rounded-md text-[24px] md:text-[34px]">
+            <button onClick={startTimer} disabled={isCounting} className="text-white bg-[#1DA1F2] px-[20px] py-[10px] rounded-md text-[24px] md:text-[34px]">
               {isCounting ? `Your Downloading Will Begain in ${timer} seconds` : 'Download'}
             </button>
             {isCounting && 
