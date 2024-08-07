@@ -279,6 +279,37 @@ const Page = () => {
                 dataFullWidthResponsive={true}
                 dataAdSlot="5613366550"
       />
+                 {post.acf.zip_file && (
+        <div className="py-[10px]">
+          <motion.div initial={{ opacity: 0, y:20 }} whileInView={{ opacity: 1, y:0 }} transition={{ delay: 0.4, duration:0.7 }}>
+            <button onClick={startTimer} disabled={isCounting} className="text-white bg-black px-[20px] py-[10px] rounded-md">
+              {isCounting ? `Wait ${timer} seconds` : 'Download'}
+            </button>
+            {isCounting && 
+            <div className="pt-[10px]">
+            <AdBanner
+                dataAdFormat="auto"
+                dataFullWidthResponsive={true}
+                dataAdSlot="5613366550"
+            />
+            <div className="pt-[10px]">
+            <AdBanner
+                dataAdFormat="auto"
+                dataFullWidthResponsive={true}
+                dataAdSlot="2616238940"
+            />
+            </div>
+            <div>
+            <AdBanner
+                dataAdFormat="auto"
+                dataFullWidthResponsive={true}
+                dataAdSlot="4601072757"
+            />
+            </div>
+            </div>}
+          </motion.div>
+        </div>
+      )}
   </div>
   );
 };
