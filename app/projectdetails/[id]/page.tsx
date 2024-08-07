@@ -10,6 +10,36 @@ import AdBanner from "@/components/AdsBanner";
 
 
 const Page = () => {
+  const [timer, setTimer] = useState(0);
+  const [isCounting, setIsCounting] = useState(false);
+  const [fileUrl, setFileUrl] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (isCounting && timer > 0) {
+      const intervalId = setInterval(() => {
+        setTimer(prevTimer => prevTimer - 1);
+      }, 1000);
+      return () => clearInterval(intervalId);
+    } else if (timer === 0 && isCounting) {
+      setIsCounting(false);
+      // Trigger download here
+      if (fileUrl) {
+        const link = document.createElement('a');
+        link.href = fileUrl;
+        link.setAttribute('download', 'file.zip');
+        document.body.appendChild(link);
+        link.click();
+        link.parentNode?.removeChild(link);
+      }
+    }
+  }, [timer, isCounting, fileUrl]);
+
+  const startTimer = () => {
+    setTimer(15);
+    setIsCounting(true);
+  };
+
+  
   const pathname = usePathname();
   const id = pathname.split("/").pop(); 
   const [post, setPost] = useState<Post | null>(null);
