@@ -1,4 +1,4 @@
-import NotesPostBox from './NotesPostBox'
+import AdBanner from "@/components/AdsBanner";
 import ProjectPostBox from './ProjectPostBox'
 
 const Projects = () => {
@@ -9,6 +9,13 @@ const Projects = () => {
       <div className='w-[80px] h-[1px] md:w-[130px] bg-white' />
     </div>
     <ProjectPostBox />
+    <div className="pt-[20px]">
+    <AdBanner
+                dataAdFormat="auto"
+                dataFullWidthResponsive={true}
+                dataAdSlot="2616238940"
+      />
+     </div>
   </div>
   )
 }

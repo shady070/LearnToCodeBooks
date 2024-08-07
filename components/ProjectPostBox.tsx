@@ -4,6 +4,8 @@ import Link from "next/link";
 import { Post } from "../types";
 import { motion } from "framer-motion";
 
+
+
 const reqUrl = 'https://freeresources.learntocodebooks.com/wp-json/wp/v2/projects?acf_format=standard&_fields=acf,id';
 
 const ProjectPostBox = () => {

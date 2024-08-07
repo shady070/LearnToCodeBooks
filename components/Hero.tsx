@@ -12,11 +12,14 @@ const Hero = () => {
      <div>
       <RecentPostBox />
      </div>
-     <AdBanner
+     <div className="pt-[20px]">
+           <AdBanner
                 dataAdFormat="auto"
                 dataFullWidthResponsive={true}
                 dataAdSlot="5613366550"
       />
+     </div>
+
     </div>
   )
 }
