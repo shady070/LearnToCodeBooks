@@ -34,6 +34,11 @@ export default function RootLayout({
         gtag('config', 'G-LKLN8BZ5VX');
         `}
       </Script>
+      <meta property="og:image" content="/og-image.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:url" content="https://learntocodebooks.com" />
+        <meta property="og:type" content="website" />
       </head>
       <body className={poppins.className}>
         <NavBar />
