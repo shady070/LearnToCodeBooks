@@ -301,11 +301,18 @@ const Page = () => {
                 dataAdSlot="2616238940"
             />
             </div>
+            <div className="pt-[10px]">
+            <AdBanner 
+                dataAdFormat="auto"
+                dataFullWidthResponsive={true}
+                dataAdSlot="4601072757"
+            />
+            </div>
             <div>
             <AdBanner
                 dataAdFormat="auto"
                 dataFullWidthResponsive={true}
-                dataAdSlot="4601072757"
+                dataAdSlot="4529183890"
             />
             </div>
             </div>}
