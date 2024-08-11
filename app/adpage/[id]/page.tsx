@@ -1,4 +1,3 @@
-
 "use client";
 import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
@@ -9,6 +8,8 @@ const Page = () => {
   const [timer, setTimer] = useState(20); 
   const [isCounting, setIsCounting] = useState(true); 
   const [fileUrl, setFileUrl] = useState<string | null>(null);
+  const [adClicks, setAdClicks] = useState(0);
+  const requiredClicks = 3; // Number of required ad clicks before download is enabled
 
   useEffect(() => {
     if (isCounting && timer > 0) {
@@ -19,7 +20,7 @@ const Page = () => {
     } else if (timer === 0 && isCounting) {
       setIsCounting(false);
       // Trigger download here
-      if (fileUrl) {
+      if (fileUrl && adClicks >= requiredClicks) {
         const link = document.createElement('a');
         link.href = fileUrl;
         link.setAttribute('download', 'file.zip');
@@ -28,7 +29,11 @@ const Page = () => {
         link.parentNode?.removeChild(link);
       }
     }
-  }, [timer, isCounting, fileUrl]);
+  }, [timer, isCounting, fileUrl, adClicks]);
+
+  const handleAdClick = () => {
+    setAdClicks(prevClicks => prevClicks + 1);
+  };
 
   const pathname = usePathname();
   const id = pathname.split("/").pop(); 
@@ -61,62 +66,38 @@ const Page = () => {
       {fileUrl && (
         /* Download btn */
         <div className="py-[10px] flex justify-center">
-                <AdBanner
-                  dataAdFormat="auto"
-                  dataFullWidthResponsive={true}
-                  dataAdSlot="5686730197"
-                />
-                <AdBanner
-                  dataAdFormat="auto"
-                  dataFullWidthResponsive={true}
-                  dataAdSlot="7923781229"
-                />
-                 <div>
-                  <AdBanner
-                    dataAdFormat="auto"
-                    dataFullWidthResponsive={true}
-                    dataAdSlot="7923781229"
-                  />
-                </div>
-                <div>
-                  <AdBanner
-                    dataAdFormat="auto"
-                    dataFullWidthResponsive={true}
-                    dataAdSlot="5495158507"
-                  />
-                </div>
+          <div onClick={handleAdClick}>
+            <AdBanner
+              dataAdFormat="auto"
+              dataFullWidthResponsive={true}
+              dataAdSlot="5686730197"
+            />
+          </div>
+          <div onClick={handleAdClick}>
+            <AdBanner
+              dataAdFormat="auto"
+              dataFullWidthResponsive={true}
+              dataAdSlot="7923781229"
+            />
+          </div>
+          <div onClick={handleAdClick}>
+            <AdBanner
+              dataAdFormat="auto"
+              dataFullWidthResponsive={true}
+              dataAdSlot="7923781229"
+            />
+          </div>
+          <div onClick={handleAdClick}>
+            <AdBanner
+              dataAdFormat="auto"
+              dataFullWidthResponsive={true}
+              dataAdSlot="5495158507"
+            />
+          </div>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.7 }}>
-            <button disabled={isCounting} className="text-white bg-[#1DA1F2] px-[20px] py-[10px] rounded-md text-[24px] md:text-[34px]">
+            <button disabled={adClicks < requiredClicks || isCounting} className="text-white bg-[#1DA1F2] px-[20px] py-[10px] rounded-md text-[24px] md:text-[34px]">
               {isCounting ? `Your Download Will Begin in ${timer} seconds` : 'Download'}
             </button>
-              <div className="pt-[10px]">
-                <AdBanner
-                  dataAdFormat="auto"
-                  dataFullWidthResponsive={true}
-                  dataAdSlot="5686730197"
-                />
-                <div className="pt-[10px]">
-                  <AdBanner
-                    dataAdFormat="auto"
-                    dataFullWidthResponsive={true}
-                    dataAdSlot="2863026234"
-                  />
-                </div>
-                <div>
-                  <AdBanner
-                    dataAdFormat="auto"
-                    dataFullWidthResponsive={true}
-                    dataAdSlot="7923781229"
-                  />
-                </div>
-                <div>
-                  <AdBanner
-                    dataAdFormat="auto"
-                    dataFullWidthResponsive={true}
-                    dataAdSlot="5495158507"
-                  />
-                </div>
-              </div>
           </motion.div>
         </div>
       )}
