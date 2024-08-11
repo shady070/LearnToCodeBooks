@@ -38,7 +38,7 @@ const Page = () => {
     if (id) {
       const fetchPostDetails = async () => {
         try {
-          const req = await fetch(`https://freeresources.learntocodebooks.com/wp-json/wp/v2/recentpost/${id}?acf_format=standard&_fields=acf`);
+          const req = await fetch(`https://freeresources.learntocodebooks.com/wp-json/wp/v2/notes/${id}?acf_format=standard&_fields=acf`);
           const postData = await req.json();
           setFileUrl(postData.acf.zip_file);
           setLoading(false);
