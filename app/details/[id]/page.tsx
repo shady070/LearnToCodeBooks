@@ -255,9 +255,10 @@ const Page = () => {
                 dataAdSlot="5613366550"
       />
      </div>
+     {/* Download btn */}
      <button className="bg-[#1DA1F2] text-white px-[20px] py-[10px] rounded-md text-[24px] md:text-[34px]" onClick={() => handleDownloadClick(id!)}>
-            Generate Download Link
-        </button>
+            Generate Download
+      </button>
   </div>
   );
 };

@@ -58,6 +58,7 @@ const Page = () => {
   return (
     <div className="md:px-[65px] px-[30px] py-[80px] bg-[#12151C] scroll-smooth md:py-[42px] md:pt-[130px]">
       {fileUrl && (
+        /* Download btn */
         <div className="py-[10px] flex justify-center">
                 <AdBanner
                   dataAdFormat="auto"
