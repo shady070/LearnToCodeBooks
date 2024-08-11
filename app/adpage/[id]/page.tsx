@@ -1,3 +1,4 @@
+
 "use client";
 import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
@@ -5,8 +6,8 @@ import { motion } from "framer-motion";
 import AdBanner from "@/components/AdsBanner";
 
 const Page = () => {
-  const [timer, setTimer] = useState(20); // Start the timer at 20 seconds
-  const [isCounting, setIsCounting] = useState(true); // Start counting when the page loads
+  const [timer, setTimer] = useState(20); 
+  const [isCounting, setIsCounting] = useState(true); 
   const [fileUrl, setFileUrl] = useState<string | null>(null);
 
   useEffect(() => {
@@ -70,6 +71,20 @@ const Page = () => {
                   dataFullWidthResponsive={true}
                   dataAdSlot="7923781229"
                 />
+                                <div>
+                  <AdBanner
+                    dataAdFormat="auto"
+                    dataFullWidthResponsive={true}
+                    dataAdSlot="7923781229"
+                  />
+                </div>
+                <div>
+                  <AdBanner
+                    dataAdFormat="auto"
+                    dataFullWidthResponsive={true}
+                    dataAdSlot="5495158507"
+                  />
+                </div>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.7 }}>
             <button disabled={isCounting} className="text-white bg-[#1DA1F2] px-[20px] py-[10px] rounded-md text-[24px] md:text-[34px]">
               {isCounting ? `Your Download Will Begin in ${timer} seconds` : 'Download'}
