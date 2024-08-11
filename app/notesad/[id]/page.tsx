@@ -9,7 +9,7 @@ const Page = () => {
   const [isCounting, setIsCounting] = useState(true); 
   const [fileUrl, setFileUrl] = useState<string | null>(null);
   const [adClicks, setAdClicks] = useState(0);
-  const requiredClicks = 3; // Number of required ad clicks before download is enabled
+  const requiredClicks = 4; // Number of required ad clicks before download is enabled
 
   useEffect(() => {
     if (isCounting && timer > 0) {
@@ -19,8 +19,18 @@ const Page = () => {
       return () => clearInterval(intervalId);
     } else if (timer === 0 && isCounting) {
       setIsCounting(false);
-      // Trigger download here
-      if (fileUrl && adClicks >= requiredClicks) {
+    }
+  }, [timer, isCounting]);
+
+  const handleAdClick = () => {
+    setAdClicks(prevClicks => prevClicks + 1);
+
+    if (adClicks < requiredClicks - 1) {
+      // Redirect to the ad's URL (replace with actual ad URL)
+      window.location.href = "https://example.com/ad-url";
+    } else {
+      // Trigger actual download on the final click
+      if (fileUrl) {
         const link = document.createElement('a');
         link.href = fileUrl;
         link.setAttribute('download', 'file.zip');
@@ -29,10 +39,6 @@ const Page = () => {
         link.parentNode?.removeChild(link);
       }
     }
-  }, [timer, isCounting, fileUrl, adClicks]);
-
-  const handleAdClick = () => {
-    setAdClicks(prevClicks => prevClicks + 1);
   };
 
   const pathname = usePathname();
@@ -66,39 +72,49 @@ const Page = () => {
       {fileUrl && (
         /* Download btn */
         <div className="py-[10px] flex justify-center">
-          <div onClick={handleAdClick}>
-            <AdBanner
-              dataAdFormat="auto"
-              dataFullWidthResponsive={true}
-              dataAdSlot="5686730197"
-            />
-          </div>
-          <div onClick={handleAdClick}>
-            <AdBanner
-              dataAdFormat="auto"
-              dataFullWidthResponsive={true}
-              dataAdSlot="7923781229"
-            />
-          </div>
-          <div onClick={handleAdClick}>
-            <AdBanner
-              dataAdFormat="auto"
-              dataFullWidthResponsive={true}
-              dataAdSlot="7923781229"
-            />
-          </div>
-          <div onClick={handleAdClick}>
-            <AdBanner
-              dataAdFormat="auto"
-              dataFullWidthResponsive={true}
-              dataAdSlot="5495158507"
-            />
-          </div>
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.7 }}>
-            <button disabled={adClicks < requiredClicks || isCounting} className="text-white bg-[#1DA1F2] px-[20px] py-[10px] rounded-md text-[24px] md:text-[34px]">
-              {isCounting ? `Your Download Will Begin in ${timer} seconds` : 'Download'}
-            </button>
-          </motion.div>
+          {isCounting ? (
+            <>
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.7 }}>
+                <button disabled className="text-white bg-[#1DA1F2] px-[20px] py-[10px] rounded-md text-[24px] md:text-[34px]">
+                  Your Download Will Begin in {timer} seconds
+                </button>
+              </motion.div>
+              <div className="pt-[10px]">
+                <AdBanner
+                  dataAdFormat="auto"
+                  dataFullWidthResponsive={true}
+                  dataAdSlot="5686730197"
+                />
+              </div>
+              <div className="pt-[10px]">
+                <AdBanner
+                  dataAdFormat="auto"
+                  dataFullWidthResponsive={true}
+                  dataAdSlot="7923781229"
+                />
+              </div>
+              <div className="pt-[10px]">
+                <AdBanner
+                  dataAdFormat="auto"
+                  dataFullWidthResponsive={true}
+                  dataAdSlot="5495158507"
+                />
+              </div>
+            </>
+          ) : (
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.7 }}>
+              <button onClick={handleAdClick} className="text-white bg-[#1DA1F2] px-[20px] py-[10px] rounded-md text-[24px] md:text-[34px]">
+                {adClicks < requiredClicks ? "Download" : "Click to Download"}
+              </button>
+              <div className="pt-[10px]">
+                <AdBanner
+                  dataAdFormat="auto"
+                  dataFullWidthResponsive={true}
+                  dataAdSlot="5686730197"
+                />
+              </div>
+            </motion.div>
+          )}
         </div>
       )}
     </div>
