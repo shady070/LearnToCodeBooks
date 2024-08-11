@@ -9,33 +9,8 @@ import { motion } from "framer-motion";
 import AdBanner from "@/components/AdsBanner";
 
 const Page = () => {
-  const [timer, setTimer] = useState(0);
-  const [isCounting, setIsCounting] = useState(false);
-  const [fileUrl, setFileUrl] = useState<string | null>(null);
-
-  useEffect(() => {
-    if (isCounting && timer > 0) {
-      const intervalId = setInterval(() => {
-        setTimer(prevTimer => prevTimer - 1);
-      }, 1000);
-      return () => clearInterval(intervalId);
-    } else if (timer === 0 && isCounting) {
-      setIsCounting(false);
-      // Trigger download here
-      if (fileUrl) {
-        const link = document.createElement('a');
-        link.href = fileUrl;
-        link.setAttribute('download', 'file.zip');
-        document.body.appendChild(link);
-        link.click();
-        link.parentNode?.removeChild(link);
-      }
-    }
-  }, [timer, isCounting, fileUrl]);
-
-  const startTimer = () => {
-    setTimer(15);
-    setIsCounting(true);
+  const handleDownloadClick = (id: string) => {
+    window.open(`/adpage/${id}`, '_blank'); // Open in a new tab
   };
 
   const pathname = usePathname();
@@ -50,7 +25,6 @@ const Page = () => {
           const req = await fetch(`https://freeresources.learntocodebooks.com/wp-json/wp/v2/recentpost/${id}?acf_format=standard&_fields=acf`);
           const postData = await req.json();
           setPost(postData);
-          setFileUrl(postData.acf.zip_file); // Set the file URL here
           setLoading(false);
         } catch (error) {
           console.error('Error fetching post details:', error);
@@ -281,37 +255,9 @@ const Page = () => {
                 dataAdSlot="5613366550"
       />
      </div>
-     {post.acf.zip_file && (
-        <div className="py-[10px] flex justify-center">
-          <motion.div initial={{ opacity: 0, y:20 }} whileInView={{ opacity: 1, y:0 }} transition={{ delay: 0.4, duration:0.7 }}>
-            <button onClick={startTimer} disabled={isCounting} className="text-white bg-[#1DA1F2] px-[20px] py-[10px] rounded-md text-[24px] md:text-[34px]">
-              {isCounting ? `Your Downloading Will Begain in ${timer} seconds` : 'Download'}
-            </button>
-            {isCounting && 
-            <div className="pt-[10px]">
-            <AdBanner
-                dataAdFormat="auto"
-                dataFullWidthResponsive={true}
-                dataAdSlot="5613366550"
-            />
-            <div className="pt-[10px]">
-            <AdBanner
-                dataAdFormat="auto"
-                dataFullWidthResponsive={true}
-                dataAdSlot="2616238940"
-            />
-            </div>
-            <div>
-            <AdBanner
-                dataAdFormat="auto"
-                dataFullWidthResponsive={true}
-                dataAdSlot="4601072757"
-            />
-            </div>
-            </div>}
-          </motion.div>
-        </div>
-      )}
+     <button className="bg-[#1DA1F2] text-white px-[20px] py-[10px] rounded-md text-[24px] md:text-[34px]" onClick={() => handleDownloadClick(id!)}>
+            Generate Download Link
+        </button>
   </div>
   );
 };
