@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import AdBanner from "@/components/AdsBanner";
 
 const Page = () => {
-  const [timer, setTimer] = useState(20);
+  const [timer, setTimer] = useState(10);
   const [isCounting, setIsCounting] = useState(true);
   const [fileUrl, setFileUrl] = useState<string | null>(null);
   const [adClickCount, setAdClickCount] = useState(0); // Track the number of ad clicks
@@ -64,27 +64,24 @@ const Page = () => {
     <div className="md:px-[65px] px-[30px] py-[80px] bg-[#12151C] scroll-smooth md:py-[42px] md:pt-[130px]">
       {fileUrl && (
         <div className="py-[10px] flex justify-center flex-col items-center">
-          <div onClick={handleAdClick}>
-            <AdBanner
-              dataAdFormat="auto"
-              dataFullWidthResponsive={true}
-              dataAdSlot="5686730197"
-            />
-          </div>
-          <div onClick={handleAdClick}>
-            <AdBanner
-              dataAdFormat="auto"
-              dataFullWidthResponsive={true}
-              dataAdSlot="7923781229"
-            />
-          </div>
-          <div onClick={handleAdClick}>
-            <AdBanner
-              dataAdFormat="auto"
-              dataFullWidthResponsive={true}
-              dataAdSlot="5495158507"
-            />
-          </div>
+          <AdBanner
+            dataAdFormat="auto"
+            dataFullWidthResponsive={true}
+            dataAdSlot="5686730197"
+            onAdClick={handleAdClick}
+          />
+          <AdBanner
+            dataAdFormat="auto"
+            dataFullWidthResponsive={true}
+            dataAdSlot="7923781229"
+            onAdClick={handleAdClick}
+          />
+          <AdBanner
+            dataAdFormat="auto"
+            dataFullWidthResponsive={true}
+            dataAdSlot="5495158507"
+            onAdClick={handleAdClick}
+          />
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -92,9 +89,7 @@ const Page = () => {
           >
             <button
               disabled={!isDownloadEnabled}
-              className={`text-white bg-[#1DA1F2] px-[20px] py-[10px] rounded-md text-[24px] md:text-[34px] ${
-                isDownloadEnabled ? "cursor-pointer" : "cursor-not-allowed"
-              }`}
+              className={`text-white bg-[#1DA1F2] px-[20px] py-[10px] rounded-md text-[24px] md:text-[34px] ${isDownloadEnabled ? "cursor-pointer" : "cursor-not-allowed"}`}
               onClick={() => {
                 if (fileUrl) {
                   const link = document.createElement("a");
@@ -113,32 +108,34 @@ const Page = () => {
                 : `Click on ${3 - adClickCount} more ad(s) to enable download`}
             </button>
             <div className="pt-[10px]">
-              <div onClick={handleAdClick}>
-                <AdBanner
-                  dataAdFormat="auto"
-                  dataFullWidthResponsive={true}
-                  dataAdSlot="5686730197"
-                />
-              </div>
-              <div className="pt-[10px]" onClick={handleAdClick}>
+              <AdBanner
+                dataAdFormat="auto"
+                dataFullWidthResponsive={true}
+                dataAdSlot="5686730197"
+                onAdClick={handleAdClick}
+              />
+              <div className="pt-[10px]">
                 <AdBanner
                   dataAdFormat="auto"
                   dataFullWidthResponsive={true}
                   dataAdSlot="2863026234"
+                  onAdClick={handleAdClick}
                 />
               </div>
-              <div onClick={handleAdClick}>
+              <div>
                 <AdBanner
                   dataAdFormat="auto"
                   dataFullWidthResponsive={true}
                   dataAdSlot="7923781229"
+                  onAdClick={handleAdClick}
                 />
               </div>
-              <div onClick={handleAdClick}>
+              <div>
                 <AdBanner
                   dataAdFormat="auto"
                   dataFullWidthResponsive={true}
                   dataAdSlot="5495158507"
+                  onAdClick={handleAdClick}
                 />
               </div>
             </div>
