@@ -92,7 +92,9 @@ const Page = () => {
           >
             <button
               disabled={!isDownloadEnabled}
-              className={`text-white bg-[#1DA1F2] px-[20px] py-[10px] rounded-md text-[24px] md:text-[34px] ${isDownloadEnabled ? "cursor-pointer" : "cursor-not-allowed"}`}
+              className={`text-white bg-[#1DA1F2] px-[20px] py-[10px] rounded-md text-[24px] md:text-[34px] ${
+                isDownloadEnabled ? "cursor-pointer" : "cursor-not-allowed"
+              }`}
               onClick={() => {
                 if (fileUrl) {
                   const link = document.createElement("a");
