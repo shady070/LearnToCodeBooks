@@ -13,7 +13,7 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "LearnToCodebooks",
-  description: "Created By ByteBrush",
+  description: "Created By ByteBrush.dev",
 };
 
 export default function RootLayout({
