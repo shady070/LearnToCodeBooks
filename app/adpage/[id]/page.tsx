@@ -61,27 +61,6 @@ const Page = () => {
     <div className="md:px-[65px] px-[30px] py-[80px] bg-[#12151C] scroll-smooth md:py-[42px] md:pt-[130px]">
       {fileUrl && (
         <div className="py-[10px] flex justify-center flex-col items-center">
-          <div>
-            <AdBanner
-              dataAdFormat="auto"
-              dataFullWidthResponsive={true}
-              dataAdSlot="5686730197"
-            />
-          </div>
-          <div>
-            <AdBanner
-              dataAdFormat="auto"
-              dataFullWidthResponsive={true}
-              dataAdSlot="7923781229"
-            />
-          </div>
-          <div>
-            <AdBanner
-              dataAdFormat="auto"
-              dataFullWidthResponsive={true}
-              dataAdSlot="5495158507"
-            />
-          </div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -92,8 +71,8 @@ const Page = () => {
               className={`text-white bg-[#1DA1F2] px-[20px] py-[10px] rounded-md text-[24px] md:text-[34px] ${isCounting ? "cursor-not-allowed" : "cursor-pointer"}`}
             >
               {isCounting
-                ? `Your Download Link Will Be Ready in ${timer} seconds`
-                : "Download"}
+                ? `Your Download Will Begin in ${timer} seconds`
+                : "Downloading..."}
             </button>
           </motion.div>
         </div>
