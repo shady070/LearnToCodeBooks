@@ -47,7 +47,7 @@ export default function RootLayout({
         <meta property="og:url" content="https://learntocodebooks.com" />
         <meta property="og:type" content="website" />
       </head>
-      <body className={cn("min-h-screen bg-background font-sans antialiased", fontSans.variable, poppins.className)}>
+      <body className={cn("min-h-screen bg-black font-sans antialiased bg", fontSans.variable, poppins.className)}>
         <NavBar />
         {children}
         <Footer />

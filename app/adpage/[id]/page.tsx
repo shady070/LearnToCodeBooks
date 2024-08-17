@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
-import AdBanner from "@/components/AdsBanner";
+import AdsBanner from "@/components/AdsBanner";
 
 const Page = () => {
   const [timer, setTimer] = useState(20); 
@@ -18,7 +18,6 @@ const Page = () => {
       return () => clearInterval(intervalId);
     } else if (timer === 0) {
       setIsCounting(false);
-      // Start the download after countdown
       if (fileUrl) {
         const link = document.createElement("a");
         link.href = fileUrl;
@@ -79,21 +78,21 @@ const Page = () => {
       )}
       <div className="py-[10px] flex justify-center flex-col items-center">
         <div>
-          <AdBanner
+          <AdsBanner
             dataAdFormat="auto"
             dataFullWidthResponsive={true}
             dataAdSlot="5686730197"
           />
         </div>
         <div>
-          <AdBanner
+          <AdsBanner
             dataAdFormat="auto"
             dataFullWidthResponsive={true}
             dataAdSlot="7923781229"
           />
         </div>
         <div>
-          <AdBanner
+          <AdsBanner
             dataAdFormat="auto"
             dataFullWidthResponsive={true}
             dataAdSlot="5495158507"
